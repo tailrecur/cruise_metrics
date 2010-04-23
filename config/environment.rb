@@ -65,6 +65,10 @@ Rails::Initializer.run do |config|
 
   # Activate observers that should always be running
   # config.active_record.observers = :cacher, :garbage_collector
+  
+  config.gem "ziya", :version => '=2.0.0', :source => "http://gemcutter.org"
+  config.gem "json", :source => "http://gemcutter.org"
+  config.gem "chronic", :source => "http://gemcutter.org"
 end
 # Load stuff from the lib directories automagically 
 Dir["lib/modules/**/*.rb"] +Dir["lib/ext/**/*.rb"].each {|file| require file}
