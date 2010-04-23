@@ -1,0 +1,25 @@
+<%- content_for(:main) do %>
+<h2>History for -> <%= ENV['CODE_BASE_TOP_DIR']%></h2>
+
+<%= ziya_chart checkins_per_day_chart_url, :size => "1000x200" -%>
+
+<table>
+  <tr>
+  <td>Author</td>
+  <td>Date</td>
+  <td>Message</td>
+  <td>Size</td>
+    <td>Tests Changed</td>
+  </tr>
+<% @checkins.reverse.each do |checkin| %>
+  <tr>
+    <td><%=checkin.author%></td>
+    <td><%=checkin.time%></td>
+    <td><%=checkin.message%></td>
+    <td><%=checkin.size%></td>
+    <td><%=checkin.tests%></td>
+  </tr>
+<%  end%>                     
+</table>
+
+<%end -%>

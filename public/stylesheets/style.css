@@ -1,0 +1,669 @@
+body {
+  margin:0;
+  padding:0;
+  border:0;			/* This removes the border around the viewport in old versions of IE */
+  width:100%;
+  background:#fff;
+  min-width:800px; 
+  font-family: Arial;
+  font-size: 11px;
+}
+
+body a:link {
+  color: #1c3664;
+  text-decoration: none;
+}
+
+body a:visited {
+  color: #1c3664;
+  text-decoration: none;
+}
+
+body a:active {
+  color: #1c3664;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+#header {
+  clear:both;
+  float:left;
+  width:100%;
+  height: 70px;
+  border-bottom: #003265 solid 4px;
+}
+
+.container {
+  position:relative;		/* This fixes the IE7 overflow hidden bug */
+  clear:both;
+  float:left;
+  overflow:hidden;	    /* This chops off any overhanging divs */
+  width: 100%;
+}
+
+.inner_container, .main_content {
+  float:left;
+  width:100%;
+  position:relative;
+}
+
+.main_container, .leftsidebar, .content_pane, .rightsidebar {
+  float:left;
+  position:relative;
+  padding:0.5%;
+  overflow:hidden;
+}
+
+.leftfit {
+  background:#fff;		/* right column background colour */
+}
+
+.leftfit .inner_container {
+  right:84%;				/* right column width */
+  background:#f4f4f4;		/* left column background colour */
+}
+
+.leftfit .main_container {
+  width: 82%;				/* right column content width */
+  left: 100%;				/* 100% plus left column left padding */
+}
+
+.leftfit .leftsidebar {
+  width: 13%;				/* left column content width (column width minus left and right padding) */
+  left: 2%;				/* (right column left and right padding) plus (left column left padding) */
+}
+
+.rightfit .main_content {
+  right:25%;				/* right column width */
+}
+.rightfit .content_pane {
+  width:72%;				/* left column content width (left column width minus left and right padding) */
+  left:26%;				/* (right column width) plus (left column left padding) */
+}
+.rightfit .rightsidebar {
+  width: 25%;				/* right column content width (right column width minus left and right padding) */
+  left: 27%;				/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+.rightfit {
+  /*background-color: #eee;*/
+}
+
+/* Footer styles */
+#footer {
+  clear:both;
+  float:left;
+  width:100%;
+  border-top:1px solid #000;
+}
+#footer p {
+  padding:10px;
+  margin:0;
+}
+
+#right_header {
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+#right_header a {
+  font-size: 1.3em;
+}
+
+#right_header .logged_in_user {
+  color: #dac40e;
+}
+
+#title {
+  position: relative;
+}
+
+.logo {
+  color: black;
+  font-size: 4em;
+  font-weight: bolder;
+}
+
+#title a {
+  padding-left: 34px;
+}
+
+#company_logo {
+  margin: 2px 0 0 5px;
+}
+
+* html #title {
+  background-image: none;
+  background-color: transparent;
+  filter: progid: DXImageTransform . Microsoft . AlphaImageLoader( src = 'images/logo.jpg', sizingMethod = 'crop' );
+}
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: inline-table;
+}
+
+#errorExplanation {
+  width: 97%;
+  border: 2px solid red;
+  padding: 7px 7px 12px 7px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+.main_top, .main_bottom {
+  display: inherit;
+}
+
+.main_top {
+  height: 10px;
+}
+
+.main_bottom {
+  height: 13px
+}
+
+.main_top_left {
+  background: #FFFFFF url( /images/top_left.gif ) no-repeat scroll left top;
+  width: 10px;
+  height: 10px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_top_right {
+  background: #FFFFFF url( /images/top_right.gif ) no-repeat scroll right top;
+  width: 10px;
+  height: 10px;
+  float: right;
+  position: relative;
+  overflow: hidden;
+}
+
+.main_top_margin {
+  background: #FFFFFF url( /images/top_margin.gif ) repeat-x scroll center top;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main_left {
+  background: #FFFFFF url( /images/left_margin.gif ) repeat-y scroll left top;
+  margin-top: inherit;
+  padding-left: 10px;
+}
+
+.main_right {
+  background: #FFFFFF url( /images/right_margin.gif ) repeat-y scroll right top;
+  border-right: inherit inherit inherit;
+  margin-left: 4px
+}
+
+.main_center {
+  margin-top: -8px;
+  padding: 10px 10px 10px 0px;
+}
+
+.main_bottom_left {
+  background: #FFFFFF url( /images/bottom_left.gif ) no-repeat scroll left top;
+  width: 10px;
+  height: 13px;
+  float: left;
+}
+
+.main_bottom_right {
+  background: #FFFFFF url( /images/bottom_right.gif ) no-repeat scroll right top;
+  width: 10px;
+  height: 13px;
+  float: right;
+}
+
+.main_bottom_margin {
+  background: #FFFFFF url( /images/bottom_margin.gif ) repeat-x scroll center top;
+  height: 100%;
+  overflow: hidden;
+}
+
+.section_header {
+  background: #919191;
+  padding: 2px 5px;
+}
+
+.box_outer {
+/*  background-color: #dedbde;*/
+  padding: 2px 3px 3px 2px;
+  margin: 0 0 10px 0;
+}
+
+.box_inner {
+  background-color: #ffffff;
+}
+.section_header_collapsible {
+  float: left;
+  width: 10px;
+}
+
+.section_header_action {
+  padding: 3px;
+  float: right;
+}
+
+.section_header_title {
+  padding: 3px 0 0 5px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.section_header_title, .section_header a {
+  color: white !important;
+}
+
+.section_content {
+  margin: 0;
+  padding: 5px;
+}
+
+#searchBoxWrapper {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.evenrow {
+  background-color: #effeef;
+}
+
+.watchlist li {
+  font-size: 1.1em;
+  font-weight: bold;
+  border-bottom: 1px solid #ffffff;
+}
+
+.defaultText {
+  padding: 5px;
+  line-height: 2em;
+}
+
+.watchItemClose {
+  float: right;
+  margin-top: 5px;
+}
+
+#profile_name {
+  font-family: Arial, Helvetica;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.inplace_edit_label {
+  font-weight: bold;
+  padding-right: 5px;
+}
+
+.entity_minimal_extras, .watchlist_profile_extras {
+  margin: 2px;
+  color: #666666;
+}
+
+.watchlist_profile_extras {
+  white-space: nowrap;
+}
+
+#profile_company {
+  font-family: Arial, Helvetica;
+  font-weight: bold;
+}
+
+#profile_link {
+  text-decoration: none;
+}
+
+#filter_panel {
+  display: none;
+}
+
+#table_actions {
+  padding: 5px;
+  background-color: #e0dfd5;
+}
+
+th#rejectBtnCell, th#selectAllCell {
+  text-align: left;
+}
+
+#candidatesTable {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 5px 0 5px 0;
+}
+
+#candidatesTable th {
+  background-color: #e0dfd5;
+  text-align: left;
+}
+
+#candidatesTable tr {
+  border: 1px solid #e0dfd5;
+  height: 40px; /*	cursor:pointer;*/
+}
+
+.odd {
+  background-color: #f1f5fa;
+}
+
+.even, #content_pane {
+  background-color: white;
+}
+
+.inner_content, .simple_list {
+  background-color: white;
+}
+
+.add_entity, .show_all_entities {
+  background: transparent url(/images/add_entity_left.gif) no-repeat;
+  padding: 2px 0;
+  margin-right: 5px;
+}
+
+.add_entity span, .show_all_entities span {
+  background:transparent url(/images/add_entity_right.gif) no-repeat scroll right top;
+  color:#FFFFFF;
+  cursor:pointer;
+  padding: 2px 10px;
+}
+
+.delete_image {
+  border: 0;
+  height: 10px;
+  width: 10px;
+}
+
+#footer {
+  padding: 2px;
+  text-align: center;
+}
+
+.interview_notes {
+  text-align: left;
+}
+
+.interview_decision {
+  text-align: left;
+  font-weight: bold;
+}
+
+.interview_interviewer {
+  text-align: left;
+  font-style: italic;
+}
+
+th#rejectBtnCell, th#selectAllCell {
+  height: 20px;
+  width: 20px;
+}
+
+#show_feedback {
+  z-index: 9999999;
+  position: fixed ! important;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  border: 0 none;
+}
+
+#show_feedback_img {
+  border: 0;
+}
+
+.simple_list {
+  list-style: none outside none;
+  padding: 0 5px 2px 5px;
+  margin: 0 auto;
+}
+
+.simple_list li {
+  line-height: 1.6em;
+  border-bottom: 1px solid lightgray;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.simple_list#other_profile_views {
+  background-color: #F4F4F4;
+  font-weight: bold;
+}
+
+.simple_list#other_profile_views li ul li {
+  padding: 0 0 0 5px;
+  display: inline;
+  border-bottom: 0;
+  font-weight: normal;
+}
+
+ul.profile_inline_list {
+  list-style: none inside none;
+  padding: 0 5px 2px 0;
+  margin: 0 auto;
+}
+
+.profile_inline_list li {
+  padding: 2px;
+  display: inline;
+  border-bottom: 0;
+  font-weight: normal;
+}
+
+.profile_inline_list li {
+  background: #F2F2F2;
+}
+
+.profile_inline_list li a {
+  color: #404040;
+}
+
+.profile_inline_list li:hover {
+  background: #6C6C6C;
+}
+
+.profile_inline_list li:hover > a {
+  color: #FFFFFF;
+}
+
+.watchlist_more, .watchlist_less {
+  background-color: white;
+  padding: 5px 10px;
+  text-align: right;
+}
+
+.channel_listing li {
+  padding: 5px;
+}
+
+#message_flash {
+  min-height: 20px;  
+}
+
+.flash_error, .flash_notice, .undo {
+  text-align: center;
+  font-weight: bold;
+  font-size: 80%;
+  padding: 2px;
+  margin-left: 1.7%;
+}
+
+.flash_notice {
+  border-top-color: #5ABD7B;
+  background: #99CC66;
+  border-bottom-color: #5ABD7B;
+  color: white;
+}
+
+.flash_error {
+  background-color: #FFE6CC;
+  color: #330000;
+  margin: 0 0 10px;
+}
+
+.undo {
+  color: black !important;
+  text-decoration: underline !important;
+}
+
+.comment_user_name {
+  font-weight: bold;
+}
+
+.comment_text {
+  font-style: italic;
+  font: 110% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.comment_time {
+	font:80%;
+	color:gray;
+}
+
+#profile_actions_menu {
+  float: right;
+  font-weight: bold;
+  font-size: small;
+}
+
+#profileHeading, #profile_job_description, #profile_tags {
+  padding: 5px;
+}
+
+#add_tags_panel, #add_job_descriptions_panel {
+  padding-top: 10px;
+}
+#profileHeading {
+  background-color: #99ff99;
+  border: #c5dbec solid thin;
+  font-size: 1.2em;
+}
+
+.profile_section_box {
+  margin-bottom: 10px;
+  background-color: #E1EAF3;
+  border: lightgray solid thin;
+}
+
+#profileName {
+  color: #002a67;
+}
+
+#add_comment {
+  padding: 5px;
+}
+
+#profile_snapshot {
+  margin-top: 10px;
+  background-color: aliceblue;
+  margin-bottom: 10px;
+}
+
+.add_new_entity {
+  margin-bottom: 5px;
+  float: right;
+}
+
+#linked_in_popup {
+  cursor: pointer;
+}
+
+.widget_container {
+}
+
+.widget_header {
+	background:#F0F0FA none repeat scroll 0% 0%;
+	border-bottom:1px solid #D2D9EB;
+	padding:4px 0 4px 4px;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.pipeline_builds {
+  color: black;
+	font-size:5em;
+}
+
+.dialog_actions {
+	float:right;
+}
+
+/*apple-style pagination*/
+.pagination {
+  background: #F1F1F1;
+  border: 1px solid #E5E5E5;
+  text-align: center;
+  padding: 0.5em;
+  margin-bottom: 5px;
+}
+
+.pagination a, .pagination span {
+  padding: .4em .5em;
+}
+
+.pagination span.disabled {
+  color: #AAA;
+}
+
+.pagination span.current {
+  font-weight: bold;
+  background: transparent url(/images/pagination-circle.gif ) no-repeat 50% 50%;
+}
+
+.pagination a {
+  text-decoration: none;
+  color: black;
+}
+.passed_row{
+  text-decoration: underline;
+  background: #00FF00;
+}
+.cancelled_row{
+  background: #111100;
+}
+
+.failed_row{
+  text-decoration: underline;
+  background: #FF0000;
+}
+
+/*Job Descriptions*/
+.job_description_box {
+    margin-bottom: 10px;
+}
+.new_job_desc {
+    float: right;
+}

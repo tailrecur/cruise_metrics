@@ -1,0 +1,30 @@
+<%- content_for(:main) do %>
+   
+                                      
+<br/>                 
+
+
+
+
+    <br/>
+    	<%=link_to "Trunk-Developer", build_url(:pipeline=>'Trunk', :server=>'trunkcruise', :stage=>'Developer'), :class=>'pipeline_builds'%>
+    <br/>
+    	<%=link_to "Trunk-Smoke", build_url(:pipeline=>'Trunk', :server=>'trunkcruise', :stage=>'Smoke' ) , :class=>'pipeline_builds'%>
+    <br/>
+	<br/>
+	   <%=link_to "2.11-Developer", build_url(:pipeline=>'2%2E11', :stage=>'Developer', :server=>'tlcruise'), :class=>'pipeline_builds'%>
+    <br/>
+    	<%=link_to "2.11-Smoke", build_url(:pipeline=>'2%2E11', :stage=>'Smoke', :server=>'tlcruise' ) , :class=>'pipeline_builds'%>
+    <br/>
+    	<%=link_to "2.10-Developer", build_url(:pipeline=>'2%2E10', :stage=>'Developer', :server=>'tlcruise'), :class=>'pipeline_builds'%>
+    <br/>
+    	<%=link_to "2.10-Smoke", build_url(:pipeline=>'2%2E10', :stage=>'Smoke', :server=>'tlcruise' ) , :class=>'pipeline_builds'%>
+    <br/>
+	
+	    <%=link_to "Call-Centre-Build", build_url(:pipeline=>'Call-Centre', :stage=>'Build', :server=>'punecruise' ) , :class=>'pipeline_builds'%>
+    <br/>
+	
+	    <%=link_to "Call-Centre-Smoke", build_url(:pipeline=>'Call-Centre', :stage=>'Smoke', :server=>'punecruise' ) , :class=>'pipeline_builds'%>
+    <br/>
+
+<%end -%>

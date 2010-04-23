@@ -1,0 +1,45 @@
+<%- content_for(:main) do %>   
+<p>
+<%= ziya_chart build_time_chart_url, :size => "1200x400" -%>
+
+<br/><br/>
+<%= ziya_chart builds_per_day_chart_url, :size => "1000x200" -%>
+
+<br/><br/>
+<%= ziya_chart build_turnaround_chart_url, :size => "1000x200" -%>
+
+</p>
+<td>Label</td>
+<table>
+  <tr>
+  <td>Reason</td>
+  <td>Scheduled Time</td>
+  <td>Status</td>
+  <td>Label</td>
+  <td>Duration</td>
+  <td>Agents</td>
+  </tr>
+
+<% @builds.reverse.each do |build| %>
+  <tr class='<%=build.status%>_row'>
+    <td><%=build.reason%></td>
+        <td><%=build.scheduled_time%></td>
+    <td><%=build.status%></td>
+    <td><%=build.label%></td>
+    <td><%="%5.2f" % build.duration%>(<%=build.max_job%>)</td>
+	<% count=0%>
+	<td><% build.jobs.each do |job|%>
+	<% count=count+1%>
+	<% timeinmin=job["current_build_duration"].to_f/60.0%>
+	<% jobandtime=job["name"] +"/" + job["agent"] +"("+"%5.2f" % timeinmin+")" %>
+	<%=jobandtime%>
+	<br>
+	<% if count==3 %>
+	<br>
+	<% count=0 %>
+	<% end %>
+	<% end%></td>
+  </tr>
+<%  end%>                     
+</table>
+   <%end -%>

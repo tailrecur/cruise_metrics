@@ -1,0 +1,5 @@
+(in /home/anandv/cruise_anal)
+rake aborted!
+no such file to load -- spec/rake/spectask
+/home/anandv/cruise_anal/Rakefile:10
+(See full trace by running task with --trace)
